@@ -31,7 +31,7 @@ Google cloud shell has the following problems:
 * The google cloud shell is interactive so the crontab will not work
 
 # Hacks of Google Cloud Shell
-Here there's the interesting part of this repository, here the following hacks:
+Here there's the interesting part of this repository:
 
 * The google cloud shell has an hidden drive (sda1) which is 60GB you can mount it in the home folder but after the session is lost everything is lost
 * When you start for the first time the google cloud shell it could track your commands. Try the following command: `gcloud config set disable_usage_reporting true`
