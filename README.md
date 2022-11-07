@@ -107,6 +107,7 @@ In the cloud shell run these commands:
 
 ```
 sudo service postgresql start 
+sudo su
 su postgres
 psql
 
