@@ -62,3 +62,4 @@ as you have done these operations connect with ssh:
 
 `ssh -i id_rsa your-username@ip-google-cloud-shell`
 
+# Cloud shell as proxy
