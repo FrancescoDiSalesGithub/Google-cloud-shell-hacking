@@ -41,25 +41,70 @@ Here there's the interesting part of this repository:
 
 # SSH on the google cloud shell using the private key
 
-When you start a cloud shell with the gcloud-cli or with cloud shell web page, it is assigned an ip to your google cloud shell and it seems that you can not ssh if not using the webpage or the gcloud-cli. The ssh shell listens on the port 6000 and in the sshd config the password authentication is disabled so it means that it is used the key authentication. In the cloud shell generate the key pair by using the following command:
+When you start a cloud shell with the gcloud-cli or with cloud shell web page, it is assigned an ip to your google cloud shell and it seems that you can not ssh if not using the webpage or the gcloud-cli. The ssh shell listens on the port 6000 and in the sshd config the password authentication is disabled so it means that it is used the key authentication. Generate on your machine a keypair:
 
 `ssh-keygen -t rsa`
 
-at passphrase leave empty, then go to the .ssh folder and download the id_rsa file. For downloading the id_rsa file you can use the webpage cloud shell by selecting the menu and the voice download, and then go to the path **/home/your-account-name/.ssh/id_rsa** and click on download, or use ngrok and python http module. In the second case insert the following commands in the cloud shell:
+then get the oauth token from google:
 
+* go to https://developers.google.com/oauthplayground/
+* search for Cloud Shell api v1
+* after selecting, choose https://www.googleapis.com/auth/cloud-platform
+* Login and authorize the application
+* On step 2 ask for auth token
+* On step 3 copy the access token
+
+After doing these steps you need to call the following api:
+
+* https://cloudshell.googleapis.com/v1/users/me/environment/default [POST] (will make you add your public key you created locally)
+* https://cloudshell.googleapis.com/v1/users/me/environment/default [POST] (will make you start the instance)
+* https://cloudshell.googleapis.com/v1/users/me/environment/default [GET] (will tell you the ip of the google cloud shell)
+
+## Putting the public key on google cloud shell
+
+The api has a POST method. Run the api with the following body:
 ```
-cd /home/your-username/.ssh
-python3 -m http.server 8080 &
-ngrok http 8080
-
+{
+  "key": "content of the public key"
+}
 ```
+And the header **Authorization**. It should has value Bearer value-of-the-access-token.
 
-copy the url of ngrok and then on the client execute:
+The content of the public key can be obtained by run the following line:
+`cat .ssh/id_rsa.pub`
 
-`wget http://sdhakdhsaj.ngrok.eu/id_rsa`
+After doing these operations run the rest api.
 
-as you have done these operations connect with ssh:
+## Start the google cloud shell instance
 
-`ssh -i id_rsa your-username@ip-google-cloud-shell`
+Same url as the previous paragraph, and same header but the json must have this body:
+```
+{
+  "accessToken": "access-token-value",
+  "publicKeys": [
+    "content-of-the-local-public-key"
+  ]
+}
+```
+And run the api
+
+## Check the ip of the google cloud shell
+
+This api has a HTTP GET method, but the url is the same. Like the previous one it has the **Authorization header**. After checking that you can run it and you will have the IP of your google cloud shell
+
+## Run the google cloud shell in ssh
+
+Since as the beginning of the chapter we know that it listens on the 6000 port, (and also the last api tell us this information) then:
+
+`ssh -i id_rsa -p 6000 myusername@ip-google-cloud-shell`
+
+If everything goes well you will have a ssh session with the google cloud shell without using the webpage or the gcloud-cli.
+
 
 # Cloud shell as proxy
+
+In the cloud shell run:
+
+`sudo apt install squid`
+
+
