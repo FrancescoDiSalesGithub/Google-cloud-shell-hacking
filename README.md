@@ -1,6 +1,9 @@
 # Google-cloud-shell-hacking
 Hacks for a better google cloud shell experience
 
+![alt text](https://github.com/FrancescoDiSalesGithub/Google-cloud-shell-hacking/blob/main/cludshell.jpeg)
+
+
 # Introduction
 
 When you create a google account, you obtain a shell for google cloud. These are the features:
