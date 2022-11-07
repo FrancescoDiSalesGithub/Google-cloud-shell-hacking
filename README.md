@@ -101,10 +101,17 @@ Since as the beginning of the chapter we know that it listens on the 6000 port, 
 If everything goes well you will have a ssh session with the google cloud shell without using the webpage or the gcloud-cli.
 
 
-# Cloud shell as proxy
+# Using the postgres database
 
-In the cloud shell run:
+In the cloud shell run these commands:
 
-`sudo apt install squid`
+```
+sudo service postgresql start 
+su postgres
+psql
+
+```
+
+At the first command you start the postgresql database service, and then you need to be the postgresql user so you use the su command and finally launching psql you have the interactive shell for postgresql. 
 
 
