@@ -56,9 +56,9 @@ then get the oauth token from google:
 
 After doing these steps you need to call the following api:
 
-* https://cloudshell.googleapis.com/v1/users/me/environment/default [POST] (will make you add your public key you created locally)
-* https://cloudshell.googleapis.com/v1/users/me/environment/default [POST] (will make you start the instance)
-* https://cloudshell.googleapis.com/v1/users/me/environment/default [GET] (will tell you the ip of the google cloud shell)
+* https://content-cloudshell.googleapis.com/v1/users/me/environments/default:addPublicKey [POST] (will make you add your public key you created locally)
+* https://content-cloudshell.googleapis.com/v1/users/me/environments/default:start [POST] (will make you start the instance)
+* https://content-cloudshell.googleapis.com/v1/users/me/environments/default [GET] (will tell you the ip of the google cloud shell)
 
 ## Putting the public key on google cloud shell
 
