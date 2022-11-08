@@ -101,6 +101,17 @@ Since as the beginning of the chapter we know that it listens on the 6000 port, 
 If everything goes well you will have a ssh session with the google cloud shell without using the webpage or the gcloud-cli.
 
 
+# Connect a google cloud shell to another google cloud shell
+
+Let's suppose we have two users:
+* UserA
+* UserB
+
+UserA wants to connect to UserB's cloud shell.
+
+UserA has to retrieve the oauth token, and register on his google cloud shell the public key of UserB's cloud shell. Then download from UserB's cloud shell the private key of the UserB. Finally he can run the following command: `ssh -i userb_rsa -p 6000 UserB@IP-CLOUD_SHELL_USERB`
+
+
 # Using the postgres database
 
 In the cloud shell run these commands:
