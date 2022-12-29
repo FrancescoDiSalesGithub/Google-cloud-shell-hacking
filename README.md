@@ -130,3 +130,37 @@ At the first command you start the postgresql database service, and then you nee
 
 In the Google Cloud shell session edit in your home folder the .bashrc file. At the end of the file write the commands you want to run at login, then save and close the files. At a new login the cloud shell will run the commands you have written in the .bashrc file.
 
+# Containers stored locally in google cloud shell 
+
+If you're using the docker you will see that, after the session is over you will lose all the content in your containers. There are two possible solutions:
+
+* using volumes
+* export and import of the container
+
+In this paragraph we will discuss about how to export and import a container. Start with pulling a container such as ubuntu:
+`docker pull ubuntu`
+
+Run the container by doing:
+`docker run --name=ubuntu -i -t ubuntu /bin/bash`
+
+exit from the shell container, and run the following command:
+`docker export -o ubuntu_container.tar`
+
+this command will create a tar archive with all the content in the container. Doing that remove the ubuntu image:
+`docker rmi ubuntu'
+
+Now load your container instance:
+`docker import ubuntu_container.tar ubuntu_mycontainer:latest`
+
+In the import command is important to pass as argument:
+* the tar archive where all the informations of the container is stored
+* the name to give to the imported container and the tag (usually should be latest)
+
+To check if the container has been imported, run again **docker images**, it should have the new name you gave to the imported container.
+Run your new container by doing:
+`docker run --name=mypersonalcontainer -i -t ubuntu_mycontainer:latest /bin/bash`
+
+This command would run your container with the informations you have inside it
+
+
+
