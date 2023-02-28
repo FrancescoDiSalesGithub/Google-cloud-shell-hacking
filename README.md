@@ -163,4 +163,11 @@ Run your new container by doing:
 This command would run your container with the informations you have inside it
 
 
+## Persistent postgresql data
+If you want to persist your data in your google cloud shell, you need to do the following:
+* create a directory in your home folder
+* `mv /var/lib/postgres/15/main /home/your_google_account/database/` 
+* edit the following file **/etc/postgresql/15/main/postgresql.conf** and at the voice **data-directory** add the path **/home/your_google_account/database/**
+* start the postgresql service with `sudo service postgres start` if everything is ok postgresql will be up and running
 
+When a new instance of the google cloud is running, you only need to edit the file **/etc/postgresql/15/main/postgresql.conf** and edit the **data-directory** voice
