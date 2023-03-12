@@ -230,8 +230,7 @@ Now you only need to run ngrok:
 
 `./ngrok tcp 9090`
 
-After running ngrok copy the url and paste in your browser. As you reach the webpage, enter as credentials the credentials in your linux container.
-
+There should be an url like the following: **tcp://0.tcp.eu.ngrok.io:10230**, please copy the address after tcp:// and paste in your browser. As you reach the webpage, enter as credentials the credentials in your linux container.
 
 ## Donation
 
