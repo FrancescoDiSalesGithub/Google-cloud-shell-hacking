@@ -171,3 +171,27 @@ If you want to persist your data in your google cloud shell, you need to do the 
 * start the postgresql service with `sudo service postgres start` if everything is ok postgresql will be up and running
 
 When a new instance of the google cloud is running, you only need to edit the file **/etc/postgresql/15/main/postgresql.conf** and edit the **data-directory** voice
+
+## Enabling systemctl on google cloud shell
+Since the instance of the google cloud shell works on a docker container, systemctl is not enabled. It is suggested to build a docker image as follow:
+```
+from ubuntu
+
+run apt update && apt install -y systemd systemd-sysv sudo
+run useradd -ms /bin/bash myuser
+run echo 'myuser:password' | chpasswd 
+run usermod -aG sudo myuser
+ 
+cmd ["/lib/systemd/systemd"]
+
+```
+
+after saving the dockerfile run the following command:
+`docker build -t mysubsystem .`
+
+wait for the complete build.
+
+After the build has done, run the docker run command:
+`docker run --name=mysubsystem-container -i -t mysubsystem`
+
+Docker will run the container, and it will present you the ubuntu login screen. At the login credentials enter the credentials you wrote in the dockerfile and then you will have a linux container with systemctl enabled.
