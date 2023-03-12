@@ -198,6 +198,41 @@ After the build has done, run the docker run command:
 Docker will run the container, and it will present you the ubuntu login screen. At the login credentials enter the credentials you wrote in the dockerfile and then you will have a linux container with systemctl enabled. If you want to exit from the container run the **shutdown** command:
 `sudo shutdown now`
 
+## Cockpit interface on google cloud shell
+
+if you want to manage the google cloud shell through cockpit as prerequisite you need to read the previous paragrah about how to install systemctl on google cloud shell. When you have installed the container in which there is systemctl run this procedure:
+
+```
+
+sudo apt update
+sudo apt install -y cockpit wget
+
+mkdir ngrok
+cd ngrok
+
+sudo systemctl start cockpit
+
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+tar -xzvf ngrok-v3-stable-linux-amd64.tgz
+rm ngrok-v3-stable-linux-amd64.tgz
+
+```
+
+then go to your ngrok account and copy your authentication token. You can find it in the ngrok account page at the voice **getting started -> setup and installation**. In that page you can find an instruction like the following:
+
+`ngrok config add-authtoken` 
+
+and there will be near this instruction your authentication token. Paste all the instruction into the terminal where the google cloud shell is running like this:
+
+`./ngrok config add-authtoken YOUR_AUTH_TOKEN`
+
+Now you only need to run ngrok:
+
+`./ngrok tcp 9090`
+
+After running ngrok copy the url and paste in your browser. As you reach the webpage, enter as credentials the credentials in your linux container.
+
+
 ## Donation
 
 If you want to support me, or if this guide helped you, you can donate me some monero coins at: `4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC`
