@@ -32,6 +32,7 @@ Google cloud shell has the following problems:
 
 * The vm is ephimeral that means that after 1 Hour of inactivity all the content outside the $HOME folder will be lost
 * The google cloud shell is interactive so the crontab will not work
+* You have 50 hours available to use the google cloud shell, after Google will reset the time at a specific date.
 
 # Hacks of Google Cloud Shell
 Here there's the interesting part of this repository:
