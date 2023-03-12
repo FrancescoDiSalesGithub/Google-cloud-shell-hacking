@@ -192,7 +192,7 @@ after saving the dockerfile run the following command:
 wait for the complete build.
 
 After the build has done, run the docker run command:
-`docker run --name=mysubsystem-container -i -t mysubsystem`
+`docker run --privileged --name=mysubsystem-container -i -t mysubsystem`
 
 Docker will run the container, and it will present you the ubuntu login screen. At the login credentials enter the credentials you wrote in the dockerfile and then you will have a linux container with systemctl enabled.
 
