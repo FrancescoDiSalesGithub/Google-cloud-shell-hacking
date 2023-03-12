@@ -195,7 +195,8 @@ wait for the complete build.
 After the build has done, run the docker run command:
 `docker run --privileged --name=mysubsystem-container -i -t mysubsystem`
 
-Docker will run the container, and it will present you the ubuntu login screen. At the login credentials enter the credentials you wrote in the dockerfile and then you will have a linux container with systemctl enabled.
+Docker will run the container, and it will present you the ubuntu login screen. At the login credentials enter the credentials you wrote in the dockerfile and then you will have a linux container with systemctl enabled. If you want to exit from the container run the **shutdown** command:
+`sudo shutdown now`
 
 ## Donation
 
