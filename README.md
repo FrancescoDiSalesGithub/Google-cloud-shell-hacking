@@ -16,12 +16,13 @@ Hacks for a better google cloud shell experience
 * Run the google cloud shell in ssh
 * Connect a google cloud shell to another google cloud shell
 * Using the postgres database
-* Containers stored locally in google cloud shell
 * Autorun the Google Cloud shell at login
+* Containers stored locally in google cloud shell
 * Persistent postgresql data
 * Enabling systemctl on google cloud shell
 * Cockpit interface on google cloud shell
 * Connect external drives to google cloud shell
+* Donation
 
 # Introduction
 
