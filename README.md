@@ -232,6 +232,42 @@ Now you only need to run ngrok:
 
 There should be an url like the following: **tcp://0.tcp.eu.ngrok.io:10230**, please copy the address after tcp:// and paste in your browser. As you reach the webpage, enter as credentials the credentials in your linux container.
 
+## Connect external drives to google cloud shell
+
+If you want to add your drives to the google cloudshell you need the following requirements:
+
+* sshfs
+* ngrok
+* (optional) if you have other mass storage such as microsd or hard-drives use a hdd docking station
+
+first on your system install openssh-server if you don't have it:
+`sudo apt intall openssh-server -y`
+
+After the installation on your local machine run the ssh service:
+`sudo service ssh start`
+
+Then with ngrok listen on port 22:
+`./ngrok tcp 22`
+
+On your google cloud shell install sshfs:
+`sudo apt install -y sshfs`
+
+After installing it, always in your google cloud shell run the following command line command:
+`sshfs -p NGROK_PORT USER@NGROK_TCP_ADDRESS:LOCAL_PATH PATH_GOOGLE_CLOUD_SHELL`
+
+where:
+* NGROK_PORT is the port ngrok gives on your local machine
+* USER is your user in your local machine
+* NGROK_TCP_ADDRESS is the address that ngrok gives you
+* LOCAL_PATH is the path where you have locally your mass storage device
+* PATH_GOOGLE_CLOUD_SHELL is the path where do you want that your local storage device must be mount on the google cloud shell
+
+After that if you are already in the folder where the device has to be mount, go back one directory and then go back to your mount folder. When you are done you can unmount the device on your google cloud shell by doing the following:
+
+`umount PATH_GOOGLE_CLOUD_SHELL`
+
+Remember that PATH_GOOGLE_CLOUD_SHELL is the path where do you want that your local storage device must be mount on the google cloud shell.
+
 ## Donation
 
 If you want to support me, or if this guide helped you, you can donate me some monero coins at: `4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC`
