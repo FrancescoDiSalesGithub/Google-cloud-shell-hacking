@@ -3,6 +3,24 @@ Hacks for a better google cloud shell experience
 
 ![alt text](https://github.com/FrancescoDiSalesGithub/Google-cloud-shell-hacking/blob/main/cludshell.jpeg)
 
+# Summary
+
+* Introduction
+* Do and don't
+* Cons of Google Cloud Shell
+* Hacks of Google Cloud Shell
+* SSH on the google cloud shell using the private key
+* Putting the public key on google cloud shell
+* Start the google cloud shell instance
+* Check the ip of the google cloud shell
+* Run the google cloud shell in ssh
+* Connect a google cloud shell to another google cloud shell
+* Using the postgres database
+* Autorun the Google Cloud shell at login
+* Persistent postgresql data
+* Enabling systemctl on google cloud shell
+* Cockpit interface on google cloud shell
+* Connect external drives to google cloud shell
 
 # Introduction
 
