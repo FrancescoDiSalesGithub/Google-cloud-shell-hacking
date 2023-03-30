@@ -22,6 +22,7 @@ Hacks for a better google cloud shell experience
 * Enabling systemctl on google cloud shell
 * Cockpit interface on google cloud shell
 * Connect external drives to google cloud shell
+* Connect with rdp protocol to Google cloud shell
 * Donation
 
 # Introduction
@@ -287,6 +288,19 @@ After that if you are already in the folder where the device has to be mount, go
 `umount PATH_GOOGLE_CLOUD_SHELL`
 
 Remember that PATH_GOOGLE_CLOUD_SHELL is the path where do you want that your local storage device must be mount on the google cloud shell.
+
+## Connecting using rdp on Google cloud shell
+
+If you have windows remote desktop and you want to connect to the Google cloud shell, you have to do the following steps:
+* Run `sudo apt install -y xrdp dbus-x11 xfce4`
+* Start xrdp service: `sudo service xrdp start`
+* Create and user and give him a password: `adduser dev`
+* Assign the user to the sudo group: `usermod -aG sudo dev`
+* Start ngork: `ngrok tcp 3389`
+* Copy the address and port after the tcp://
+* Open the remote desktop app for windows and connect
+* Login with the user created at the third point and you have your Google cloud shell environment on rdp
+
 
 ## Donation
 
