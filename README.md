@@ -313,7 +313,7 @@ After that install firefox:
 
 `sudo apt install firefox-esr`
 
-On firefox, change the download location to **/root** and then go to **google.com** and log in as your google user, then, go to your google drive and download the qcow image of windows server 2019. After downloading go to /root and type the following command:
+On firefox, change the download location to **/root** and then go to **google.com** and log in as your google user, then, go to your google drive and download the qcow image of windows server. After downloading go to /root and type the following command:
 
 `qemu-sysmte-x86_64 -img windowserver.qcow -m 2048 -boot c`
 
