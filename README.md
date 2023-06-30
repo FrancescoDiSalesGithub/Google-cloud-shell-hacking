@@ -23,6 +23,7 @@ Hacks for a better google cloud shell experience
 * Cockpit interface on google cloud shell
 * Connect external drives to google cloud shell
 * Connect with rdp protocol to Google cloud shell
+* Windows Server on google cloud shell
 * Donation
 
 # Introduction
@@ -292,7 +293,7 @@ Remember that PATH_GOOGLE_CLOUD_SHELL is the path where do you want that your lo
 ## Connecting using rdp on Google cloud shell
 
 If you have windows remote desktop and you want to connect to the Google cloud shell, you have to do the following steps:
-* Run `sudo apt install -y xrdp dbus-x11 xfce4`
+* Run `sudo apt install -y xrdp dbus-x11 xfce4 xfce4-goodies`
 * Start xrdp service: `sudo service xrdp start`
 * Create and user and give him a password: `adduser dev`
 * Assign the user to the sudo group: `usermod -aG sudo dev`
@@ -301,6 +302,20 @@ If you have windows remote desktop and you want to connect to the Google cloud s
 * Open the remote desktop app for windows and connect
 * Login with the user created at the third point and you have your Google cloud shell environment on rdp
 
+## Windows Server on Google
+
+As prerequisite you have to add in your google drive a qcow image of your windows server, also you have to follow the steps of the previous paragraph.
+Then you have to install qemu:
+
+`sudo apt install -y qemu-system-x86`
+
+After that install firefox:
+
+`sudo apt install firefox-esr`
+
+On firefox, change the download location to **/root** and then go to **google.com** and log in as your google user, then, go to your google drive and download the qcow image of windows server 2019. After downloading go to /root and type the following command:
+
+`qemu-sysmte-x86_64 -img windowserver.qcow -m 2048 -boot c`
 
 ## Donation
 
