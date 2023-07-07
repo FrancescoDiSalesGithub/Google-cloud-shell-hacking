@@ -320,3 +320,15 @@ On firefox, change the download location to **/root** and then go to **google.co
 ## Donation
 
 If you want to support me, or if this guide helped you, you can donate me some monero coins at: `4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC`
+
+## Sponsor
+
+Exciting News: Introducing Hack The Box Academy! lock
+
+fire Calling all cybersecurity enthusiasts and aspiring hackers! fire
+
+I'm thrilled to announce an incredible opportunity for you to take your skills to the next level. Today, I proudly sponsor Hack The Box Academy, an innovative online platform dedicated to cybersecurity education and practical training.
+
+Hack The Box Academy has earned a stellar reputation for its cutting-edge approach to teaching real-world hacking techniques and cybersecurity principles. With a mission to empower individuals with the knowledge and skills necessary to succeed in the ever-evolving world of cybersecurity, this platform is an absolute game-changer.
+
+Start now: https://referral.hackthebox.com/mzwyliz
