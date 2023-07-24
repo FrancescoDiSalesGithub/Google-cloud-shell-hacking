@@ -47,11 +47,11 @@ sudo apt purge -y gcc-9-base
 sudo apt purge -y gcc 
 sudo apt purge -y gcsfuse
 sudo apt purge -y gdb 
-sudo apt purge -y gitoldstable-security 
-sudo apt purge -y gnupg-l10noldstable-security 
-sudo apt purge -y gnupg-utilsoldstable-security 
-sudo apt purge -y gnupg2oldstable-security 
-sudo apt purge -y gnupgoldstable-security 
+sudo apt purge -y git
+sudo apt purge -y gnupg-l10n 
+sudo apt purge -y gnupg-utils 
+sudo apt purge -y gnupg2 
+sudo apt purge -y gnupg 
 sudo apt purge -y google-cloud-sdk-app-engine-go
 sudo apt purge -y google-cloud-sdk-app-engine-java
 sudo apt purge -y google-cloud-sdk-app-engine-python-extras
@@ -70,19 +70,19 @@ sudo apt purge -y google-cloud-sdk-package-go-module
 sudo apt purge -y google-cloud-sdk-pubsub-emulator
 sudo apt purge -y google-cloud-sdk-skaffold
 sudo apt purge -y google-cloud-sdk
-sudo apt purge -y gpg-agentoldstable-security
-sudo apt purge -y gpg-wks-clientoldstable-security
-sudo apt purge -y gpg-wks-serveroldstable-security
-sudo apt purge -y gpgoldstable-security 
-sudo apt purge -y gpgconfoldstable-security 
-sudo apt purge -y gpgsmoldstable-security 
-sudo apt purge -y gpgvoldstable-security 
+sudo apt purge -y gpg-agent
+sudo apt purge -y gpg-wks-client
+sudo apt purge -y gpg-wks-server
+sudo apt purge -y gpg 
+sudo apt purge -y gpgconf 
+sudo apt purge -y gpgsm 
+sudo apt purge -y gpgv 
 sudo apt purge -y graphviz 2.42.2-5  
 sudo apt purge -y grep 3.6-1+deb11u1  
 sudo apt purge -y kubectl
 sudo apt purge -y lxc 1:4.0.6-2+deb11u2  
-sudo apt purge -y lynx-commonoldstable-security 
-sudo apt purge -y lynxoldstable-security 
+sudo apt purge -y lynx-common 
+sudo apt purge -y lynx 
 sudo apt purge -y m4 
 sudo apt purge -y mailcap
 sudo apt purge -y make 
@@ -161,8 +161,8 @@ sudo apt purge -y ruby-power-assert
 sudo apt purge -y ruby-rubygems 
 sudo apt purge -y ruby-test-unit 
 sudo apt purge -y ruby-xmlrpc 
-sudo apt purge -y ruby2.7-devoldstable-security 
-sudo apt purge -y ruby2.7oldstable-security 
+sudo apt purge -y ruby2.7-dev 
+sudo apt purge -y ruby2.7 
 sudo apt purge -y ruby 
 sudo apt purge -y rubygems-integration 
 sudo apt purge -y sqlite3   
