@@ -25,6 +25,7 @@ Hacks for a better google cloud shell experience
 * Connect with rdp protocol to Google cloud shell
 * Windows Server on google cloud shell
 * Removing bloat from google cloud shell
+* Using dbeaver on a google cloud shell database
 * Donation
 
 # Introduction
@@ -325,6 +326,21 @@ If you want to remove bloating software from your google cloud shell download th
 
 At the next google cloud startup instance it would took some minutes until the removing procedure is done.
 
+## Using dbeaver on a google cloud shell server
+
+If you want to connect with dbeaver with the postgres database you need to do the follow:
+
+* start the postgres service
+* let ngrok listen to the port 5432 by running it as a tcp connection: `ngrok tcp 5432`
+* copy the url and port and past it somewhere
+* open a new instance of google cloud shell with the tmux and elevate privileges as root by doing sudo su and then go as postgres user by doing su postgres
+* connect to the database doing psql -u postgres
+* connect to the default postgres database by doing \c
+* change the default credentials of postgres by doing: `alter user postgres password mysupersecurepassword`
+* open dbeaver and create a postgresql connection
+* as the voice host choose the ngrok hostname (something like 0.tcp.eu.ngrok.io) and the relative port
+* insert the credentials you have edit before with the alter user command
+* test the connection. If everything goes well a message box will alert that the connection works
 
 ## Donation
 
