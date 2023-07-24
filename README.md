@@ -24,6 +24,7 @@ Hacks for a better google cloud shell experience
 * Connect external drives to google cloud shell
 * Connect with rdp protocol to Google cloud shell
 * Windows Server on google cloud shell
+* Removing bloat from google cloud shell
 * Donation
 
 # Introduction
@@ -316,6 +317,14 @@ After that install firefox:
 On firefox, change the download location to **/root** and then go to **google.com** and log in as your google user, then, go to your google drive and download the qcow image of windows server. After downloading go to /root and type the following command:
 
 `qemu-system-x86_64 -img windowserver.qcow -m 4096 -boot c`
+
+## Removing bloat from google cloud shell
+
+If you want to remove bloating software from your google cloud shell download the file in this repository called **remove-bloat.sh**. If you want to have always free space on your google cloud instance, write the **bash.rc** file in your google cloud home folder and write:
+`chmod +x remove-bloat.sh; ./remove-bloat.sh`
+
+At the next google cloud startup instance it would took some minutes until the removing procedure is done.
+
 
 ## Donation
 
