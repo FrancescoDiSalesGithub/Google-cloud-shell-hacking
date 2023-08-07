@@ -91,7 +91,7 @@ After doing these steps you need to call the following api:
 The api has a POST method. Run the api with the following body:
 ```
 {
-  "key": "content of the public key"
+  "key": "ssh-rsa content of the public key"
 }
 ```
 And the header **Authorization**. It should has value Bearer value-of-the-access-token.
