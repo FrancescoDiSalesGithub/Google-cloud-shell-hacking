@@ -99,7 +99,16 @@ And the header **Authorization**. It should has value Bearer value-of-the-access
 The content of the public key can be obtained by run the following line:
 `cat .ssh/id_rsa.pub`
 
-After doing these operations run the rest api.
+After doing these operations run the rest api. search for the json keys:
+
+* sshHost
+* sshPort
+
+and connect in ssh with the terminal by doing:
+
+```
+ssh -i my_key_rsa -p 6000 my_google_username@ip-google-cloud-shell
+```
 
 ## Start the google cloud shell instance
 
