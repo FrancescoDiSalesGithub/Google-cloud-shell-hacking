@@ -382,7 +382,7 @@ services:
 
 Save the file. Exit from the google cloud shell instance and start a new one. When a new google cloud shell sessions starts a gitlab docker instance will start. It may take 4 to 7 minutes for the container to boot. When done copy and paste the ngrok http link to visit the web interface of your gitlab instance.
 
-NOTE: at first installation on gitlab it may be required to insert a root passowrd. To find it first run `docker ps -a` and search the name of the container. Then run: `docker exec name_of_the_container cat /etc/gitlab/initial_root_password` after the output of the cat command paste in the web login interface and log in.
+NOTE: at first installation on gitlab it may be required to insert a root password. To find it first run `docker ps -a` and search the name of the container. Then run: `docker exec name_of_the_container cat /etc/gitlab/initial_root_password` after the output of the cat command paste in the web login interface and log in.
 
 
 ## Donation
