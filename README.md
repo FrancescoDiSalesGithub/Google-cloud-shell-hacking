@@ -26,6 +26,7 @@ Hacks for a better google cloud shell experience
 * Windows Server on google cloud shell
 * Removing bloat from google cloud shell
 * Using dbeaver on a google cloud shell database
+* Gitlab on google cloud shell
 * Donation
 
 # Introduction
@@ -341,6 +342,48 @@ If you want to connect with dbeaver with the postgres database you need to do th
 * as the voice host choose the ngrok hostname (something like 0.tcp.eu.ngrok.io) and the relative port
 * insert the credentials you have edit before with the alter user command
 * test the connection. If everything goes well a message box will alert that the connection works
+
+## Gitlab on google cloud shell
+
+To install Gitlab on google cloud shell you first need to edit your .bashrc file appending the following lines:
+
+```
+export GITLAB_HOME =/home/your_google_account_username/your_gitlab_folder
+cd /home/your_google_account_username/your_gitlab_folder; docker-compose --force-recreate up -d
+/home/your_google_account_username/ngrok/./ngrok http 80
+
+```
+
+After editing the file .bashrc, go to the your_gitlab_folder folder and make the following folders:
+
+* config
+* logs
+* data
+
+in this your_gitlab_folder folder, create a docker-compose.yml file and add these lines:
+
+```
+version: '3.6'
+services:
+  web:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    hostname: 'localhost'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab'
+      - '$GITLAB_HOME/logs:/var/log/gitlab'
+      - '$GITLAB_HOME/data:/var/opt/gitlab'
+    shm_size: '256m'
+
+```
+
+Save the file. Exit from the google cloud shell instance and start a new one. When a new google cloud shell sessions starts a gitlab docker instance will start. It may take 4 to 7 minutes for the container to boot. When done copy and paste the ngrok http link to visit the web interface of your gitlab instance.
+
+NOTE: at first installation on gitlab it may be required to insert a root passowrd. To find it first run `docker ps -a` and search the name of the container. Then run: `docker exec name_of_the_container cat /etc/gitlab/initial_root_password` after the output of the cat command paste in the web login interface and log in.
+
 
 ## Donation
 
