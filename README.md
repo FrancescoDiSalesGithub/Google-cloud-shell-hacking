@@ -15,6 +15,7 @@ Hacks for a better google cloud shell experience
 * Check the ip of the google cloud shell
 * Run the google cloud shell in ssh
 * Connect a google cloud shell to another google cloud shell
+* Running another operative system at the login in the google cloud shell
 * Using the postgres database
 * Autorun the Google Cloud shell at login
 * Containers stored locally in google cloud shell
@@ -145,6 +146,44 @@ Let's suppose we have two users:
 UserA wants to connect to UserB's cloud shell.
 
 UserA has to retrieve the oauth token, and register on his google cloud shell the public key of UserB's cloud shell. Then download from UserB's cloud shell the private key of the UserB. Finally he can run the following command: `ssh -i userb_rsa -p 6000 UserB@IP-CLOUD_SHELL_USERB`
+
+# Running another operative system at the login in the google cloud shell
+
+If you want to run another operative system instead of debian, you can try to create an operative system container. Create in your home folder a path like:
+```
+/home/your_google_account_name/your_favourite_operative_system
+```
+In the **your_favourite_operative_system** folder create a root folder:
+```
+mkdir root
+```
+Always in this directory, create a docker-compose.yml with the following informations:
+```
+version: '3.6'
+services:
+  kali:
+    image: "ubuntu" # you can try other operative system such as alpine kali arch and so on
+    tty: true
+    stdin_open: true
+    command: bash # if alpine or unknown operative system use sh
+    volumes:
+      - "/home/your_google_account_name/your_favourite_operative_system/root:/root"
+```
+Before editing the **.bashrc** file, run:
+```
+docker-compose up -d
+```
+then check the name of the container:
+```
+docker ps -a
+```
+At the column NAME save somewhere the name of the container. After this check, go to your home folder and edit the **.bashrc** file appending the following line of code:
+
+```
+cd /home/your_google_account_name/your_favourite_operative_system; docker-compose up -d && docker start -i your_container_name
+```
+
+Wait for the current google cloud shell to end and start a new one. On boot, you will have a running instance of your favourite system, but you will lose all your installed apps on the container.
 
 
 # Using the postgres database
