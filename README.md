@@ -157,7 +157,7 @@ In the **your_favourite_operative_system** folder create a root folder:
 ```
 mkdir root
 ```
-Always in this directory, create a docker-compose.yml with the following informations:
+Always in this directory (/home/your_google_account_name/your_favourite_operative_system), create a docker-compose.yml with the following informations:
 ```
 version: '3.6'
 services:
