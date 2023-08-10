@@ -129,20 +129,12 @@ And the header **Authorization**. It should has value Bearer value-of-the-access
 The content of the public key can be obtained by run the following line:
 `cat .ssh/id_rsa.pub`
 
-After doing these operations run the rest api. search for the json keys:
-
-* sshHost
-* sshPort
-
-and connect in ssh with the terminal by doing:
-
-```
-ssh -i my_key_rsa -p 6000 my_google_username@ip-google-cloud-shell
-```
-
 ## Start the google cloud shell instance
 
-Same url as the previous paragraph, and same header but the json must have this body:
+Use the following api:
+https://content-cloudshell.googleapis.com/v1/users/me/environments/default:start 
+
+Add the header **Authorization**. It should has value Bearer value-of-the-access-token. The json is the following:
 ```
 {
   "accessToken": "access-token-value",
@@ -151,17 +143,33 @@ Same url as the previous paragraph, and same header but the json must have this 
   ]
 }
 ```
-And run the api
+Then run the api
 
 ## Check the ip of the google cloud shell
 
-This api has a HTTP GET method, but the url is the same. Like the previous one it has the **Authorization header**. After checking that you can run it and you will have the IP of your google cloud shell
+Run:
+```
+ https://content-cloudshell.googleapis.com/v1/users/me/environments/default
+```
+
+Like the previous one it has the **Authorization header**. Run it and you will have the IP of your google cloud shell.
 
 ## Run the google cloud shell in ssh
 
-Since as the beginning of the chapter we know that it listens on the 6000 port, (and also the last api tell us this information) then:
+Running the api:
+```
+https://content-cloudshell.googleapis.com/v1/users/me/environments/default:start
+```
+As response of the rest api, search for the json keys:
 
-`ssh -i id_rsa -p 6000 myusername@ip-google-cloud-shell`
+* sshHost
+* sshPort
+
+you can connect in ssh with the terminal by doing:
+
+```
+ssh -i my_key_rsa -p value_of_sshPort my_google_username@value_of_sshHost
+```
 
 If everything goes well you will have a ssh session with the google cloud shell without using the webpage or the gcloud-cli.
 
