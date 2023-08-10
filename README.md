@@ -113,6 +113,16 @@ The api has a POST method. Run the api with the following body:
 {
   "key": "ssh-rsa content of the public key"
 }
+
+where content of the public key = abkjdksajkgajkdhkhksda  
+no username should be pasted after the rsa encryption
+
+Example:
+
+{
+  "key":"afabasjdgnjadkjadhaksdsajkdsjakd"
+}
+
 ```
 And the header **Authorization**. It should has value Bearer value-of-the-access-token.
 
