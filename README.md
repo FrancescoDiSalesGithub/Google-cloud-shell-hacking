@@ -35,6 +35,7 @@ Start now: https://referral.hackthebox.com/mzwyliz
 * Check the ip of the google cloud shell
 * Run the google cloud shell in ssh
 * Connect a google cloud shell to another google cloud shell
+* Getting oauth token on a running instance of a google cloud shell
 * Running another operative system at the login in the google cloud shell
 * Using the postgres database
 * Autorun the Google Cloud shell at login
@@ -183,6 +184,14 @@ Let's suppose we have two users:
 UserA wants to connect to UserB's cloud shell.
 
 UserA has to retrieve the oauth token, and register on his google cloud shell the public key of UserB's cloud shell. Then download from UserB's cloud shell the private key of the UserB. Finally he can run the following command: `ssh -i userb_rsa -p 6000 UserB@IP-CLOUD_SHELL_USERB`
+
+# Getting oauth token on a running instance of a google cloud shell
+
+If you want an oauth token while logged in your google cloud shell, you can run the following command:
+```
+gcloud auth application-default print-access-token
+```
+
 
 # Running another operative system at the login in the google cloud shell
 
