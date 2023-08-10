@@ -135,7 +135,7 @@ The content of the public key can be obtained by run the following line:
 Use the following api:
 https://content-cloudshell.googleapis.com/v1/users/me/environments/default:start 
 
-Add the header **Authorization**. It should has value Bearer value-of-the-access-token. The json is the following:
+Add the header **Authorization**. It should has value Bearer value-of-the-access-token. The json request is the following:
 ```
 {
   "accessToken": "access-token-value",
