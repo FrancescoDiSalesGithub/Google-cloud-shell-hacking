@@ -200,7 +200,10 @@ If you want that your google cloud shell starts to a different zone than your ne
 
 ```
 gcloud config set compute/zone us-central-1a
+gcloud config set compute/region us-east1
 ```
+
+For These commands you need to create a project in google cloud shell.
 
 # Running another operative system at the login in the google cloud shell
 
