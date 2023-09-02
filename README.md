@@ -36,6 +36,7 @@ Start now: https://referral.hackthebox.com/mzwyliz
 * Run the google cloud shell in ssh
 * Connect a google cloud shell to another google cloud shell
 * Getting oauth token on a running instance of a google cloud shell
+* Change location and zone of the google cloud shell
 * Running another operative system at the login in the google cloud shell
 * Using the postgres database
 * Autorun the Google Cloud shell at login
@@ -189,9 +190,17 @@ UserA has to retrieve the oauth token, and register on his google cloud shell th
 
 If you want an oauth token while logged in your google cloud shell, you can run the following command:
 ```
+gcloud config set compute/region us-east1
 gcloud auth application-default print-access-token
 ```
 
+# Change location and zone of the google cloud shell
+
+If you want that your google cloud shell starts to a different zone than your near one you have to run the following commands:
+
+```
+gcloud config set compute/zone us-central-1a
+```
 
 # Running another operative system at the login in the google cloud shell
 
