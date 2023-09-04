@@ -37,6 +37,7 @@ Start now: https://referral.hackthebox.com/mzwyliz
 * Connect a google cloud shell to another google cloud shell
 * Getting oauth token on a running instance of a google cloud shell
 * Change location and zone of the google cloud shell
+* Use the google cloud shell as proxy
 * Running another operative system at the login in the google cloud shell
 * Using the postgres database
 * Autorun the Google Cloud shell at login
@@ -373,6 +374,50 @@ America:
 * us-west4-b
 * us-west4-c
 
+# Use the google cloud shell as proxy
+
+If you want to use your google cloud shell instance as proxy you need to run the following commands (or insert them in the .bashrc file):
+
+```
+sudo apt install -y squid
+```
+Just for let you know Squid is a http proxy server. Create a **squid.conf** file with the following settings:
+
+```
+http_port 3128
+cache_dir /var/cache/squid 100 16 256
+acl all src 0.0.0.0/0
+http_access allow all
+
+```
+
+copy the **squid.conf** file to **/etc/squid**
+```
+sudo cp squid.conf /etc/squid
+```
+
+Finally run the squid service:
+
+```
+sudo service squid start
+```
+
+Use ngrok to let the proxy be available from outside:
+```
+./ngrok tcp 3128
+```
+After running copy the tcp:// url. If you want to run the proxy from a browser it is suggested to remove the tcp:// part and the port and put the port in the port field of your browser proxy settings (squid is a http proxy server).
+
+For better use at startup the .bashrc file should have the following lines:
+
+```
+
+sudo apt install -y squid
+sudo cp squid.conf /etc/squid/
+sudo service squid start
+cd ngrok;./ngrok tcp 3128
+
+```
 
 # Running another operative system at the login in the google cloud shell
 
