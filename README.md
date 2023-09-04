@@ -191,7 +191,6 @@ UserA has to retrieve the oauth token, and register on his google cloud shell th
 
 If you want an oauth token while logged in your google cloud shell, you can run the following command:
 ```
-gcloud config set compute/region us-east1
 gcloud auth application-default print-access-token
 ```
 
