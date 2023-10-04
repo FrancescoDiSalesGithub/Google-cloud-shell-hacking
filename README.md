@@ -7,6 +7,9 @@ Hacks for a better google cloud shell experience
 
 If you want to support me, or if this guide helped you, you can donate me some monero coins at: `4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC`
 
+Or you can donate me with PayPal:
+https://www.paypal.me/francescodisales
+
 ## Sponsor
 
 Exciting News: Introducing Hack The Box Academy! lock
