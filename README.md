@@ -7,7 +7,11 @@ Hacks for a better google cloud shell experience
 
 If you want to support me, or if this guide helped you, you can donate me some monero coins at: `4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC`
 
-Or you can donate me with PayPal:
+Or you can donate me with the PayPal app:
+
+![](https://github.com/FrancescoDiSalesGithub/Google-cloud-shell-hacking/blob/main/pp_my_qrcode_tip_only_1696585257001.jpg)
+
+or with the paypal web page:
 https://www.paypal.me/francescodisales
 
 ## Sponsor
