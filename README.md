@@ -5,7 +5,7 @@ Hacks for a better google cloud shell experience
 
 ## Donation
 
-If you want to support me, or if this guide helped you, or you want to buy ke a coffee you can donate with paypal at the following url:
+If you want to support me, or if this guide helped you, or you want to buy me a coffee, you can donate with paypal at the following url:
 
 https://www.paypal.me/francescodisales
 
