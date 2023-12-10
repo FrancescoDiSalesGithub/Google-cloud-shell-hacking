@@ -3,30 +3,8 @@ Hacks for a better google cloud shell experience
 
 ![alt text](https://github.com/FrancescoDiSalesGithub/Google-cloud-shell-hacking/blob/main/cludshell.jpeg)
 
-## Donation
-
-If you want to support me, or if this guide helped you, or you want to buy me a coffee, you can donate with paypal at the following url:
-
-https://www.paypal.me/francescodisales
-
-## Sponsor
-
-Exciting News: Introducing Hack The Box Academy! lock
-
-fire Calling all cybersecurity enthusiasts and aspiring hackers! fire
-
-I'm thrilled to announce an incredible opportunity for you to take your skills to the next level. Today, I proudly sponsor Hack The Box Academy, an innovative online platform dedicated to cybersecurity education and practical training.
-
-Hack The Box Academy has earned a stellar reputation for its cutting-edge approach to teaching real-world hacking techniques and cybersecurity principles. With a mission to empower individuals with the knowledge and skills necessary to succeed in the ever-evolving world of cybersecurity, this platform is an absolute game-changer.
-
-Start now: https://referral.hackthebox.com/mzwyliz
-
-
-
 # Summary
 
-* Donation
-* Sponsor
 * Introduction
 * Do and don't
 * Cons of Google Cloud Shell
@@ -53,6 +31,8 @@ Start now: https://referral.hackthebox.com/mzwyliz
 * Removing bloat from google cloud shell
 * Using dbeaver on a google cloud shell database
 * Gitlab on google cloud shell
+* Donation
+* Sponsor
 
 # Introduction
 
@@ -706,4 +686,22 @@ Save the file. Exit from the google cloud shell instance and start a new one. Wh
 NOTE: at first installation on gitlab it may be required to insert a root password. To find it first run `docker ps -a` and search the name of the container. Then run: `docker exec name_of_the_container cat /etc/gitlab/initial_root_password` after the output of the cat command paste in the web login interface and log in.
 
 
+## Donation
 
+If you want to support me, or if this guide helped you, or you want to buy me a coffee, you can donate with paypal at the following url:
+
+```
+https://www.paypal.me/francescodisales
+```
+
+## Sponsor
+
+Exciting News: Introducing Hack The Box Academy! lock
+
+fire Calling all cybersecurity enthusiasts and aspiring hackers! fire
+
+I'm thrilled to announce an incredible opportunity for you to take your skills to the next level. Today, I proudly sponsor Hack The Box Academy, an innovative online platform dedicated to cybersecurity education and practical training.
+
+Hack The Box Academy has earned a stellar reputation for its cutting-edge approach to teaching real-world hacking techniques and cybersecurity principles. With a mission to empower individuals with the knowledge and skills necessary to succeed in the ever-evolving world of cybersecurity, this platform is an absolute game-changer.
+
+Start now: https://referral.hackthebox.com/mzwyliz
