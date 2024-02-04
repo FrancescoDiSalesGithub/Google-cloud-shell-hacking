@@ -191,7 +191,7 @@ Where Country can be found at the following link:
 https://www.iso.org/obp/ui/#search
 ```
 
-the value Country you have to put in the torrc file is the Alpha2-code value in the link above. Remember to use a country that is not to far from your position otherwise you will have a connection timeout. after putting the line:
+the value Country you have to put in the torrc file is the Alpha2-code value in the link above. Remember to use a country that is not too far from your position otherwise you will have a connection timeout. after putting the line:
 
 ```
 ExitNodes {Country}
