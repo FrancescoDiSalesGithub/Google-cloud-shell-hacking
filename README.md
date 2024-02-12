@@ -31,6 +31,7 @@ Hacks for a better google cloud shell experience
 * Removing bloat from google cloud shell
 * Using dbeaver on a google cloud shell database
 * Gitlab on google cloud shell
+* Scheduling on google cloud shell
 * Donation
 * Sponsor
 
@@ -549,6 +550,66 @@ services:
 Save the file. Exit from the google cloud shell instance and start a new one. When a new google cloud shell sessions starts a gitlab docker instance will start. It may take 4 to 7 minutes for the container to boot. When done copy and paste the ngrok http link to visit the web interface of your gitlab instance.
 
 NOTE: at first installation on gitlab it may be required to insert a root password. To find it first run `docker ps -a` and search the name of the container. Then run: `docker exec name_of_the_container cat /etc/gitlab/initial_root_password` after the output of the cat command paste in the web login interface and log in.
+
+## Scheduling on google cloud shell
+
+Since scheduling is not enabled on google cloud shell, it is possible to use a java program to do that. First write/copy the following code in a file called **TimerScheduler.java** :
+
+```
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class TimerScheduler {
+
+    public static void main(String[] args) {
+        Timer timer = new Timer();
+
+        // Schedule a task to run every 1 second
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Hello, World!");
+            }
+        }, 0, 1000);
+
+        // Allow the scheduler to run for 10 seconds
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Cancel the timer
+        timer.cancel();
+    }
+}
+
+```
+
+Then to compile it run:
+
+```
+
+javac TimerScheduler.java
+
+```
+
+to run it type:
+
+```
+
+java TimerScheduler
+
+```
+
+it will run the java program but print at output **Hello world!**. For a different logic, you have to develop in java your scheduling job logic, for example:
+
+* checking an ip
+* run a program each n seconds
+* download a script
+
+And so on.
 
 
 ## Donation
