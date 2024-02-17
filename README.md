@@ -619,6 +619,11 @@ If you want to support me, or if this guide helped you, or you want to buy me a 
 ```
 https://www.paypal.me/francescodisales
 ```
+Or with monero at the following address:
+
+```
+4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC
+```
 
 ## Sponsor
 
