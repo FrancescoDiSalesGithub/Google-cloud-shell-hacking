@@ -32,6 +32,7 @@ Hacks for a better google cloud shell experience
 * Using dbeaver on a google cloud shell database
 * Gitlab on google cloud shell
 * Scheduling on google cloud shell
+* Restarting the google cloud shell without using the gui
 * Donation
 * Sponsor
 
@@ -610,6 +611,26 @@ it will run the java program but print at output **Hello world!**. For a differe
 * download a script
 
 And so on.
+
+## Restarting the google cloud shell without using the gui
+
+If you have to restart the google cloud shell due to misconfigurations or server problems, you can restart the google cloud shell instance by enabling the password authentication to the ssh deamon. Edit the sshd config file:
+
+```
+
+sudo vim /etc/ssh/sshd_config
+
+```
+
+search for **PasswordAuthentication** and replace no with yes then save and quit with vim. Then create a user in linux and after the creation connect locally to your google cloud shell instance:
+
+```
+
+ssh myuser@localhost
+
+```
+
+Insert the password, and then exit from the ssh session. The google cloud shell will restart by itself.
 
 
 ## Donation
