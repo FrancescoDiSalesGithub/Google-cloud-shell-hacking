@@ -692,7 +692,7 @@ ssh -i id_rsa -p 6000 yourgoogleaccount@ip-google-cloud-shell
 
 Since the new version of ngrok with the free tier has a traffic of 1 GB in and out, you can recreate ngrok's functionality using ssh port forwarding.
 
-* Create a vps on linode (Suggested the following one: Shared CPU, 512 MB ram) near your location so that the network traffic is not slow
+* Create a vps on linode (Suggested the following one: Shared CPU, 512 MB ram) near your google cloud shell instance so that the network traffic is not slow
 * Connect to the vps
 * Go to /etc/ssh/sshd_config:
 
