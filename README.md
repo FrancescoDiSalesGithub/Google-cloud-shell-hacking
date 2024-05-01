@@ -34,6 +34,7 @@ Hacks for a better google cloud shell experience
 * Scheduling on google cloud shell
 * Restarting the google cloud shell without using the gui
 * Putting the public key manually on a running google cloud shell instance
+* Alternative to ngrok (Poor man's ngrok)
 * Donation
 * Sponsor
 
@@ -687,7 +688,35 @@ ssh -i id_rsa -p 6000 yourgoogleaccount@ip-google-cloud-shell
 
 ```
 
+## Alternative to ngrok (Poor man's ngrok)
 
+Since the new version of ngrok with the free tier has a traffic of 1 GB in and out, you can recreate ngrok's functionality using ssh port forwarding.
+
+* Create a vps on linode (Suggested the following one: Shared CPU, 512 MB ram) near your location so that the network traffic is not slow
+* Connect to the vps
+* Go to /etc/ssh/sshd_config:
+
+  ```
+  sudo vim /etc/ssh/sshd_config
+  
+  ``` 
+* Uncomment the voice **GatewayPorts** and set it to yes
+* Restart the ssh service on the vps
+  
+  ```
+
+  sudo service ssh restart
+
+  ```
+* Go to your google cloud shell instance and run the following command:
+  ```
+
+  ssh -R <remote_port>:localhost:<port_where_the_program_is_listening_on_the_google_cloud_shell> root@ip-vps
+
+  ```
+* Connect to the vps with the assigned remote port
+
+For Clarification the remote port is the port in which the vps listen to the traffic generated in outbound by the google cloud shell
 
 ## Donation
 
