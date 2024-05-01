@@ -33,6 +33,7 @@ Hacks for a better google cloud shell experience
 * Gitlab on google cloud shell
 * Scheduling on google cloud shell
 * Restarting the google cloud shell without using the gui
+* Putting the public key manually on a running google cloud shell instance
 * Donation
 * Sponsor
 
@@ -631,6 +632,61 @@ ssh myuser@localhost
 ```
 
 Insert the password, and then exit from the ssh session. The google cloud shell will restart by itself.
+
+
+## Putting the public key manually on a running google cloud shell instance
+
+If you have a running instance of a google cloud shell, and you want to connect in ssh with your terminal, follow these steps:
+
+* Create a ssh keypair:
+
+```
+
+ssh-keygen -t rsa
+
+```
+* Copy the content of the public key (usually id_rsa.pub) the content to the authorized_key file and after reopen the authorized_keys files and remove the host near your public key hash:
+
+```
+
+sudo cat id_rsa.pub >> /home/yourgoogleaccount/.ssh/authorized_keys
+sudo cat id_rsa.pub >> /etc/ssh/keys/authorized_keys
+
+```
+
+```
+Content of the authorized_keys file at the bottom:
+
+ssh-rsa 1asdafnkjnkfas...<SNIP>...a google-ic2-shell #google-ic2-shell has to be removed
+
+```
+
+
+
+
+* Restart the ssh service:
+
+```
+
+sudo service ssh restart
+
+```
+
+* Search for the google cloud shell public ip:
+
+```
+curl ifconfig.me
+
+```
+
+* Copy the content of the private key to your local computer and connect to the google cloud shell ssh server:
+
+```
+
+ssh -i id_rsa -p 6000 yourgoogleaccount@ip-google-cloud-shell
+
+```
+
 
 
 ## Donation
