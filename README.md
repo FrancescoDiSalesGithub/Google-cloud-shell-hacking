@@ -4,7 +4,7 @@ Hacks for a better google cloud shell experience
 ![alt text](https://github.com/FrancescoDiSalesGithub/Google-cloud-shell-hacking/blob/main/cludshell.jpeg)
 
 # Summary
-
+* Donation
 * Introduction
 * Do and don't
 * Cons of Google Cloud Shell
@@ -35,8 +35,24 @@ Hacks for a better google cloud shell experience
 * Restarting the google cloud shell without using the gui
 * Putting the public key manually on a running google cloud shell instance
 * Alternative to ngrok (Poor man's ngrok)
-* Donation
-* Sponsor
+* Getting http hostname
+  
+# Donation
+
+Before starting with this hacking guide, If you want to support me, or if this guide helped you, or you want to buy me a coffee, you can donate with paypal at the following url:
+
+```
+https://www.paypal.me/francescodisales
+```
+Or with monero at the following address:
+```
+4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC
+```
+or donate some bitcoins at the following wallet:
+```
+bc1qff3uyjz3zrtz6h6g8aydph70hhlcj9t3q2ynw4
+```
+
 
 # Introduction
 
@@ -718,27 +734,25 @@ Since the new version of ngrok with the free tier has a traffic of 1 GB in and o
 
 For Clarification the remote port is the port in which the vps listen to the traffic generated in outbound by the google cloud shell
 
-## Donation
 
-If you want to support me, or if this guide helped you, or you want to buy me a coffee, you can donate with paypal at the following url:
+# Getting http hostname
+If you want to host on the google cloud server a http server or a web application that listens on a specific port, and you want to use the hostname with a NS dns record you have to follow the following steps:
+* Start your google cloud shell
+* Press on the button web preview
+* Preview on port 8080
+* the browser should redirect to an url like:
+  ```
+  https://8080-cs-12345678-default.cs-europe-west1-iuzs.cloudshell.dev/?authuser=0&redirectedPreviously=true
 
+  ```
+* Now run an http application on a port different than 8080
+* From the URL :
 ```
-https://www.paypal.me/francescodisales
+https://8080-cs-12345678-default.cs-europe-west1-iuzs.cloudshell.dev/?authuser=0&redirectedPreviously=true
 ```
-Or with monero at the following address:
+Replace 8080 with the number of the port where the web application is listening
+* now you should be enable to see your web applicaton
 
-```
-4B9WQivaHfd3miDfPKEfCianocGpBx9d8FXycz2vmNW3aBDVKHgkBd9Gmapt4RBVEpTwnehujsiUBBehUiLvnEHs7VFstCC
-```
+## Extra
+From the url that the google cloud shell gave you, you can assign with cloudflare an address dns record type.
 
-## Sponsor
-
-Exciting News: Introducing Hack The Box Academy! lock
-
-fire Calling all cybersecurity enthusiasts and aspiring hackers! fire
-
-I'm thrilled to announce an incredible opportunity for you to take your skills to the next level. Today, I proudly sponsor Hack The Box Academy, an innovative online platform dedicated to cybersecurity education and practical training.
-
-Hack The Box Academy has earned a stellar reputation for its cutting-edge approach to teaching real-world hacking techniques and cybersecurity principles. With a mission to empower individuals with the knowledge and skills necessary to succeed in the ever-evolving world of cybersecurity, this platform is an absolute game-changer.
-
-Start now: https://referral.hackthebox.com/mzwyliz
