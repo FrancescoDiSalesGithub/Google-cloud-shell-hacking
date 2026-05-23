@@ -36,6 +36,7 @@ Hacks for a better google cloud shell experience
 * Putting the public key manually on a running google cloud shell instance
 * Alternative to ngrok (Poor man's ngrok)
 * Getting http hostname
+* Gemini cli history
   
 # Donation
 
@@ -755,4 +756,7 @@ Replace 8080 with the number of the port where the web application is listening
 
 ## Extra
 From the url that the google cloud shell gave you, you can assign with cloudflare an address dns record type.
+
+# Gemini cli history
+With new updates google cloud shell now has gemini cli installed. When you run a conversation with gemini-cli in interactive mode and then exit with /quit, the history of the conversation is saved. you can find the history in your home directory and then go to .gemini/tmp
 
